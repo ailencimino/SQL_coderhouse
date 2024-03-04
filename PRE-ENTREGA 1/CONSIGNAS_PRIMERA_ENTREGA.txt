@@ -1,0 +1,21 @@
+SQL / “PRIMERA ENTREGA DEL PROYECTO FINAL”
+
+Por aquí les dejo las consignas de la primera entrega del proyecto final, este primer trabajo entregable resume todo lo que fuimos  viendo y haciendo hasta el momento.
+Recomendación, lean con atención las consignas y revisen el modelo de entrega que les adjunto más abajo, para que se puedan guiar y dar una idea de lo que se espera que entreguen, que básicamente son 2 cosas:
+
+1°- El SCRIPT.SQL que contenga todo el código para la creación de la base, las tablas. Este archivo se debe ejecutar sin arrojar errores.
+
+2°- La documentación del proyecto, un documento, preferiblemente en PDF, que contenga la descripción de todo lo que fueron haciendo hasta ahora, comenzando por la explicación de la temática del proyecto, el DER y luego la descripción de las tablas. Para esto les deje un modelo de documentación para que revisen y puedan guiarse.
+
+
+#ACLARACIÓN: todavía  no es necesario cargar las tablas con datos.
+
+
+# MODELO DE ENTREGA: MODELO DE DOCUMENTACIÓN DEL PROYECTO
+
+MODELO DE SCRIPT.SQL ENTREGABLE
+
+
+
+# TUTORIAL SCRIPT.SQL: PASO A PASO, CÓMO GENERAR EL SCRIPT.SQL
+# PLAZO DE ENTREGADEL TRABAJO: 7 dias a partir de su activación.
