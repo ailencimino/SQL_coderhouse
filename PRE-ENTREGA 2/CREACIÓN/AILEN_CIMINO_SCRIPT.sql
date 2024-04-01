@@ -271,33 +271,14 @@ SELECT c.ID_CLIENTE, l.ID_LIBRO
 FROM cliente c
 CROSS JOIN libro l;
 
--- datos  empleados
+-- datos  empleadosempleado_mas_ventas_2023
 INSERT INTO empleados (ID_EMPLEADO, NOMBRE, APELLIDO, CARGO, FECHA_CONTRATACION, TELEFONO, CORREO) VALUES
 (1, 'Juan', 'Pérez', 'Gerente de Ventas', '2023-05-10', '123456789', 'juan.perez@example.com'),
 (2, 'María', 'García', 'Analista de Marketing', '2023-08-15', '987654321', 'maria.garcia@example.com'),
 (3, 'Carlos', 'López', 'Especialista en Recursos Humanos', '2022-12-20', '456123789', 'carlos.lopez@example.com'),
 (4, 'Laura', 'Martínez', 'Contador', '2023-02-28', '789456123', 'laura.martinez@example.com'),
-(5, 'Pedro', 'Gómez', 'Desarrollador de Software', '2022-10-05', '321654987', 'pedro.gomez@example.com'),
-(6, 'Ana', 'Rodríguez', 'Diseñador Gráfico', '2023-07-18', '654987321', 'ana.rodriguez@example.com'),
-(7, 'Diego', 'Hernández', 'Analista de Datos', '2022-11-30', '987321654', 'diego.hernandez@example.com'),
-(8, 'Sofía', 'Díaz', 'Especialista en Finanzas', '2023-04-25', '741852963', 'sofia.diaz@example.com'),
-(9, 'Javier', 'Gutiérrez', 'Ejecutivo de Ventas', '2022-09-12', '852963741', 'javier.gutierrez@example.com'),
-(10, 'Elena', 'Sánchez', 'Gerente de Marketing', '2023-03-15', '963741852', 'elena.sanchez@example.com'),
-(11, 'Andrés', 'Fernández', 'Analista de Sistemas', '2022-06-20', '159263748', 'andres.fernandez@example.com'),
-(12, 'Luis', 'López', 'Consultor de Negocios', '2023-01-18', '357951846', 'luis.lopez@example.com'),
-(13, 'Carmen', 'Martín', 'Especialista en Recursos Humanos', '2022-08-28', '258147369', 'carmen.martin@example.com'),
-(14, 'Rosa', 'González', 'Analista de Marketing Digital', '2023-06-10', '654789123', 'rosa.gonzalez@example.com'),
-(15, 'Mario', 'Ruiz', 'Gerente de Proyectos', '2022-11-05', '369852741', 'mario.ruiz@example.com'),
-(16, 'Natalia', 'Hernández', 'Analista de Datos', '2023-04-30', '963258741', 'natalia.hernandez@example.com'),
-(17, 'Alejandro', 'Díaz', 'Desarrollador de Software', '2022-10-15', '147258369', 'alejandro.diaz@example.com'),
-(18, 'Paula', 'Sánchez', 'Ejecutivo de Ventas', '2023-03-20', '258369147', 'paula.sanchez@example.com'),
-(19, 'Ricardo', 'Gómez', 'Analista de Marketing', '2022-09-25', '369147258', 'ricardo.gomez@example.com'),
-(20, 'Silvia', 'Torres', 'Gerente de Recursos Humanos', '2023-02-18', '741963852', 'silvia.torres@example.com'),
-(21, 'Gabriel', 'Alvarez', 'Analista de Sistemas', '2022-07-10', '852741963', 'gabriel.alvarez@example.com'),
-(22, 'Verónica', 'Morales', 'Contador', '2023-05-28', '963852741', 'veronica.morales@example.com'),
-(23, 'Hugo', 'Fernández', 'Especialista en Finanzas', '2022-12-10', '123789456', 'hugo.fernandez@example.com'),
-(24, 'Valeria', 'García', 'Analista de Marketing Digital', '2023-08-05', '147369852', 'valeria.garcia@example.com'),
-(25, 'Roberto', 'Martínez', 'Consultor de Negocios', '2022-11-22', '369852147', 'roberto.martinez@example.com');
+(5, 'Pedro', 'Gómez', 'Desarrollador de Software', '2022-10-05', '321654987', 'pedro.gomez@example.com') 
+;
 
 -- DATO PROVEEDORES
 INSERT INTO proveedor (ID_PROVEEDOR, NOMBRE, DIRECCION, TELEFONO, ID_EDITORIAL) VALUES
@@ -360,129 +341,389 @@ INSERT INTO venta (ID_VENTA, FECHA_VENTA, TOTAL_PRECIO, ID_CLIENTE, ID_LIBRO, ID
 (28, '2023-01-30', 40, 3, 28, 3),
 (29, '2023-09-22', 65, 4, 29, 4),
 (30, '2023-08-10', 30, 5, 30, 5),
-(31, '2023-05-01', 45, 6, 31, 6),
-(32, '2023-11-10', 50, 7, 32, 7),
-(33, '2023-06-05', 65, 8, 33, 8),
-(34, '2023-02-18', 35, 9, 34, 9),
-(35, '2023-09-03', 25, 10, 35, 10),
-(36, '2023-08-15', 50, 11, 36, 11),
-(37, '2023-04-25', 60, 12, 37, 12),
-(38, '2023-01-10', 45, 13, 38, 13),
-(39, '2023-10-30', 55, 14, 39, 14),
-(40, '2023-07-22', 35, 15, 40, 15),
-(41, '2023-03-15', 40, 16, 41, 16),
-(42, '2023-11-05', 65, 17, 42, 17),
-(43, '2023-09-05', 45, 18, 43, 18),
-(44, '2023-05-12', 30, 19, 44, 19),
-(45, '2023-02-28', 50, 20, 45, 20),
-(46, '2023-12-20', 70, 21, 46, 21),
-(47, '2023-08-02', 55, 22, 47, 22),
-(48, '2023-04-15', 35, 23, 48, 23),
-(49, '2023-01-08', 25, 24, 49, 24),
-(50, '2023-10-25', 40, 25, 50, 25),
+(31, '2023-05-01', 45, 6, 31, 1),
+(32, '2023-11-10', 50, 7, 32, 2),
+(33, '2023-06-05', 65, 8, 33, 3),
+(34, '2023-02-18', 35, 9, 34, 4),
+(35, '2023-09-03', 25, 10, 35, 5),
+(36, '2023-08-15', 50, 11, 36, 1),
+(37, '2023-04-25', 60, 12, 37, 2),
+(38, '2023-01-10', 45, 13, 38, 3),
+(39, '2023-10-30', 55, 14, 39, 4),
+(40, '2023-07-22', 35, 15, 40, 5),
+(41, '2023-03-15', 40, 16, 41, 1),
+(42, '2023-11-05', 65, 17, 42, 2),
+(43, '2023-09-05', 45, 18, 43, 3),
+(44, '2023-05-12', 30, 19, 44, 4),
+(45, '2023-02-28', 50, 20, 45, 5),
+(46, '2023-12-20', 70, 21, 46, 1),
+(47, '2023-08-02', 55, 22, 47, 2),
+(48, '2023-04-15', 35, 23, 48, 3),
+(49, '2023-01-08', 25, 24, 49, 4),
+(50, '2023-10-25', 40, 25, 50, 5),
 (51, '2023-06-18', 60, 26, 26, 1),
 (52, '2023-03-12', 45, 27, 27, 2),
 (53, '2023-12-01', 55, 28, 28, 3),
 (54, '2023-09-10', 35, 29, 29, 4),
 (55, '2023-05-05', 40, 30, 30, 5),
-(56, '2023-02-20', 65, 31, 31, 6),
-(57, '2023-11-15', 45, 32, 32, 7),
-(58, '2023-07-05', 30, 33, 33, 8),
-(59, '2023-03-28', 50, 34, 34, 9),
-(60, '2023-12-18', 70, 35, 35, 10),
-(61, '2023-08-08', 55, 1, 36, 11),
-(62, '2023-04-01', 35, 2, 37, 12),
-(63, '2023-01-20', 25, 3, 38, 13),
-(64, '2023-10-10', 40, 4, 39, 14),
-(65, '2023-06-28', 50, 5, 40, 15),
-(66, '2023-03-22', 60, 6, 41, 16),
-(67, '2023-11-20', 45, 7, 42, 17),
-(68, '2023-07-02', 30, 8, 43, 18),
-(69, '2023-02-25', 50, 9, 44, 19),
-(70, '2023-12-15', 70, 10, 45, 20),
-(71, '2023-09-05', 55, 11, 46, 21),
-(72, '2023-05-30', 35, 12, 47, 22),
-(73, '2023-03-05', 25, 13, 48, 23),
-(74, '2023-10-25', 40, 14, 49, 24),
-(75, '2023-06-16', 65, 15, 50, 25),
+(56, '2023-02-20', 65, 31, 31, 1),
+(57, '2023-11-15', 45, 32, 32, 2),
+(58, '2023-07-05', 30, 33, 33, 3),
+(59, '2023-03-28', 50, 34, 34, 4),
+(60, '2023-12-18', 70, 35, 35, 5),
+(61, '2023-08-08', 55, 1, 36, 1),
+(62, '2023-04-01', 35, 2, 37, 2),
+(63, '2023-01-20', 25, 3, 38, 3),
+(64, '2023-10-10', 40, 4, 39, 4),
+(65, '2023-06-28', 50, 5, 40, 5),
+(66, '2023-03-22', 60, 6, 41, 1),
+(67, '2023-11-20', 45, 7, 42, 2),
+(68, '2023-07-02', 30, 8, 43, 3),
+(69, '2023-02-25', 50, 9, 44, 4),
+(70, '2023-12-15', 70, 10, 45, 5),
+(71, '2023-09-05', 55, 11, 46, 1),
+(72, '2023-05-30', 35, 12, 47, 2),
+(73, '2023-03-05', 25, 13, 48, 3),
+(74, '2023-10-25', 40, 14, 49, 4),
+(75, '2023-06-16', 65, 15, 50, 5),
 (76, '2023-02-10', 55, 16, 26, 1),
 (77, '2023-11-01', 35, 17, 27, 2),
 (78, '2023-07-20', 25, 18, 28, 3),
 (79, '2023-04-12', 40, 19, 29, 4),
 (80, '2023-01-05', 50, 20, 30, 5),
-(81, '2023-09-28', 70, 21, 31, 6),
-(82, '2023-06-25', 55, 22, 32, 7),
-(83, '2023-03-18', 35, 23, 33, 8),
-(84, '2023-11-10', 25, 24, 34, 9),
-(85, '2023-08-02', 40, 25, 35, 10),
-(86, '2023-04-25', 60, 26, 36, 11),
-(87, '2023-01-18', 45, 27, 37, 12),
-(88, '2023-10-10', 55, 28, 38, 13),
-(89, '2023-07-02', 35, 29, 39, 14),
-(90, '2023-02-23', 30, 30, 40, 15),
-(91, '2023-12-15', 50, 31, 41, 16),
-(92, '2023-09-08', 70, 32, 42, 17),
-(93, '2023-05-30', 55, 33, 43, 18),
-(94, '2023-02-03', 35, 34, 44, 19),
-(95, '2023-10-25', 25, 35, 45, 20),
-(96, '2023-06-16', 40, 1, 46, 21),
-(97, '2023-03-10', 65, 2, 47, 22),
-(98, '2023-12-05', 55, 3, 48, 23),
-(99, '2023-08-28', 35, 4, 49, 24),
-(100, '2023-05-20', 30, 5, 50, 25),
+(81, '2023-09-28', 70, 21, 31, 1),
+(82, '2023-06-25', 55, 22, 32, 2),
+(83, '2023-03-18', 35, 23, 33, 3),
+(84, '2023-11-10', 25, 24, 34, 4),
+(85, '2023-08-02', 40, 25, 35, 5),
+(86, '2023-04-25', 60, 26, 36, 1),
+(87, '2023-01-18', 45, 27, 37, 2),
+(88, '2023-10-10', 55, 28, 38, 3),
+(89, '2023-07-02', 35, 29, 39, 4),
+(90, '2023-02-23', 30, 30, 40, 5),
+(91, '2023-12-15', 50, 31, 41, 1),
+(92, '2023-09-08', 70, 32, 42, 2),
+(93, '2023-05-30', 55, 33, 43, 3),
+(94, '2023-02-03', 35, 34, 44, 4),
+(95, '2023-10-25', 25, 35, 45, 5),
+(96, '2023-06-16', 40, 1, 46, 1),
+(97, '2023-03-10', 65, 2, 47, 2),
+(98, '2023-12-05', 55, 3, 48, 3),
+(99, '2023-08-28', 35, 4, 49, 4),
+(100, '2023-05-20', 30, 5, 50, 5),
 (101, '2023-01-13', 50, 6, 26, 1),
 (102, '2023-09-03', 70, 7, 27, 2),
 (103, '2023-05-27', 55, 8, 28, 3),
 (104, '2023-02-20', 35, 9, 29, 4),
 (105, '2023-11-12', 25, 10, 30, 5),
-(106, '2023-07-05', 40, 11, 31, 6),
-(107, '2023-03-30', 50, 12, 32, 7),
-(108, '2023-12-20', 70, 13, 33, 8),
-(109, '2023-09-15', 55, 14, 34, 9),
-(110, '2023-06-10', 35, 15, 35, 10),
-(111, '2023-03-03', 25, 16, 36, 11),
-(112, '2023-10-26', 40, 17, 37, 12),
-(113, '2023-06-18', 60, 18, 38, 13),
-(114, '2023-02-10', 45, 19, 39, 14),
-(115, '2023-11-05', 55, 20, 40, 15),
-(116, '2023-08-29', 35, 21, 41, 16),
-(117, '2023-05-22', 25, 22, 42, 17),
-(118, '2023-01-15', 40, 23, 43, 18),
-(119, '2023-10-08', 50, 24, 44, 19),
-(120, '2023-07-01', 70, 25, 45, 20),
-(121, '2023-03-25', 55, 26, 46, 21),
-(122, '2023-12-18', 35, 27, 47, 22),
-(123, '2023-08-11', 25, 28, 48, 23),
-(124, '2023-05-05', 40, 29, 49, 24),
-(125, '2023-01-27', 65, 30, 50, 25),
+(106, '2023-07-05', 40, 11, 31, 1),
+(107, '2023-03-30', 50, 12, 32, 2),
+(108, '2023-12-20', 70, 13, 33, 3),
+(109, '2023-09-15', 55, 14, 34, 4),
+(110, '2023-06-10', 35, 15, 35, 5),
+(111, '2023-03-03', 25, 16, 36, 1),
+(112, '2023-10-26', 40, 17, 37, 2),
+(113, '2023-06-18', 60, 18, 38, 3),
+(114, '2023-02-10', 45, 19, 39, 4),
+(115, '2023-11-05', 55, 20, 40, 5),
+(116, '2023-08-29', 35, 21, 41, 1),
+(117, '2023-05-22', 25, 22, 42, 2),
+(118, '2023-01-15', 40, 23, 43, 3),
+(119, '2023-10-08', 50, 24, 44, 4),
+(120, '2023-07-01', 70, 25, 45, 5),
+(121, '2023-03-25', 55, 26, 46, 1),
+(122, '2023-12-18', 35, 27, 47, 2),
+(123, '2023-08-11', 25, 28, 48, 3),
+(124, '2023-05-05', 40, 29, 49, 4),
+(125, '2023-01-27', 65, 30, 50, 5),
 (126, '2023-10-20', 55, 31, 26, 1),
 (127, '2023-07-14', 35, 32, 27, 2),
 (128, '2023-04-07', 25, 33, 28, 3),
 (129, '2023-12-28', 40, 34, 29, 4),
 (130, '2023-09-20', 50, 35, 30, 5),
-(131, '2023-06-12', 70, 1, 31, 6),
-(132, '2023-02-03', 55, 2, 32, 7),
-(133, '2023-11-25', 35, 3, 33, 8),
-(134, '2023-08-18', 25, 4, 34, 9),
-(135, '2023-05-12', 40, 5, 35, 10),
-(136, '2023-01-05', 60, 6, 36, 11),
-(137, '2023-09-28', 45, 7, 37, 12),
-(138, '2023-06-21', 55, 8, 38, 13),
-(139, '2023-03-15', 35, 9, 39, 14),
-(140, '2023-12-08', 30, 10, 40, 15),
-(141, '2023-08-01', 50, 11, 41, 16),
-(142, '2023-04-25', 70, 12, 42, 17),
-(143, '2023-01-18', 55, 13, 43, 18),
-(144, '2023-10-11', 35, 14, 44, 19),
-(145, '2023-07-04', 25, 15, 45, 20),
-(146, '2023-03-28', 40, 16, 46, 21),
-(147, '2023-12-21', 60, 17, 47, 22),
-(148, '2023-09-13', 45, 18, 48, 23),
-(149, '2023-06-06', 55, 19, 49, 24),
-(150, '2023-02-28', 35, 20, 50, 25);
+(131, '2023-06-12', 70, 1, 31, 1),
+(132, '2023-02-03', 55, 2, 32, 2),
+(133, '2023-11-25', 35, 3, 33, 3),
+(134, '2023-08-18', 25, 4, 34, 4),
+(135, '2023-05-12', 40, 5, 35, 5),
+(136, '2023-01-05', 60, 6, 36, 1),
+(137, '2023-09-28', 45, 7, 37, 2),
+(138, '2023-06-21', 55, 8, 38, 3),
+(139, '2023-03-15', 35, 9, 39, 4),
+(140, '2023-12-08', 30, 10, 40, 5),
+(141, '2023-08-01', 50, 11, 41, 1),
+(142, '2023-04-25', 70, 12, 42, 2),
+(143, '2023-01-18', 55, 13, 43, 3),
+(144, '2023-10-11', 35, 14, 44, 4),
+(145, '2023-07-04', 25, 15, 45, 5),
+(146, '2023-03-28', 40, 16, 46, 1),
+(147, '2023-12-21', 60, 17, 47, 2),
+(148, '2023-09-13', 45, 18, 48, 3),
+(149, '2023-06-06', 55, 19, 49, 4),
+(150, '2023-02-28', 35, 20, 50, 5);
+
 
 INSERT INTO libro_autor (ID_LIBRO, ID_AUTOR)
 SELECT l.ID_LIBRO, a.ID_AUTOR
 FROM libro l
 CROSS JOIN autor a;
+
+
+--  LISTADO DE VISTAS
+-- 1. Vista: libro_mas_vendido_anio
+
+-- En esta priemra  vista me muestra  el título del libro más vendido del año 2023, junto con la cantidad total de unidades vendidas. Lo quiero encontrar el libro mas vendido del año 2023 para que el equipo de marketing de la libreria pueda hacer un posteo comercial con este libro. 
+--  El objetivo principal de esta vista es proporcionar información sobre el libro más vendido del año 2023 para su uso en estrategias de marketing y promoción. Al conocer cuál es el libro más popular entre los clientes durante ese período, el equipo de marketing puede dirigir sus esfuerzos.
+-- Tablas involucradas: La vista está basada en las tablas de "venta" y "libro". 
+
+CREATE VIEW libro_mas_vendido_anio AS
+SELECT l.TITULO AS libro_mas_vendido, COUNT(*) AS cantidad_vendida
+FROM venta v
+JOIN libro l ON v.ID_LIBRO = l.ID_LIBRO
+WHERE YEAR(v.FECHA_VENTA) = 2023
+GROUP BY v.ID_LIBRO
+ORDER BY cantidad_vendida DESC
+LIMIT 1;
+
+-- 2. Vista: clientes_con_mas_compras_ultimo_mes
+
+-- Esta vista muestra los clientes que han realizado más compras durante el último mes, considerando específicamente los meses de noviembre y diciembre. Se utiliza para identificar a los clientes más activos en el período previo a las vacaciones de verano y recompensarlos con un voucher del 50% de descuento para vacaciones de verano.
+-- Tablas involucradas: Esta vista se basa principalmente en la tabla de "venta" para obtener datos sobre las transacciones de compra de los clientes. Además, puede requerir información adicional de la tabla "cliente" para identificar a los clientes por su nombre u otros detalles de contacto.
+
+CREATE VIEW clientes_mas_compras_ultimo_mes AS
+SELECT c.NOMBRE AS nombre_cliente, c.APELLIDO AS apellido_cliente, c.TELEFONO, c.CORREO, COUNT(*) AS total_compras
+FROM venta v
+JOIN cliente c ON v.ID_CLIENTE = c.ID_CLIENTE
+WHERE YEAR(v.FECHA_VENTA) = 2023
+AND MONTH(v.FECHA_VENTA) IN (11, 12) -- Filtrar por noviembre (mes 11) y diciembre (mes 12) del año 2023
+GROUP BY v.ID_CLIENTE
+ORDER BY total_compras DESC;
+
+-- 3 Vista: empleado_mas_ventas_2023
+-- Esta vista le permite a recursos humanos identificar al empleado que realizó más ventas en el año 2023 para diseñar una campaña de incentivos.
+-- Tablas involucradas: venta: Contiene los registros de las ventas realizadas y la tabla de empleados. 
+
+CREATE VIEW empleado_mas_ventas_2023 AS
+SELECT e.NOMBRE AS nombre_empleado, e.APELLIDO AS apellido_empleado, e.CARGO, e.TELEFONO, e.CORREO, COUNT(*) AS total_ventas
+FROM venta v
+JOIN empleados e ON v.ID_EMPLEADO = e.ID_EMPLEADO
+WHERE YEAR(v.FECHA_VENTA) = 2023
+GROUP BY v.ID_EMPLEADO
+ORDER BY total_ventas DESC
+LIMIT 1;
+
+
+-- LISTADO DE FUNCIONES 
+
+-- PRIMERA FUNCION 
+-- La primera función que pense fue una que le permita a los empleados y los clientes verificar si un Titulo está disponible. Para ello creo una función que lea los datos de la BD y particularmente la tabla "Libro". Se crea una variable local llamada "disponibilidad" que es un tipo boolean que devuelve el valor : TRUE si hay al menos un libro disponible con el título proporcionado, o FALSE si no hay libros disponibles con ese título.
+-- Por lo tanto, cuando llamo a la  función con el título de un libr, la función realiza una consulta en la tabla libro para verificar si hay al menos un libro disponible con ese título y devuelve un0 valor booleano que indica su disponibilidad.
+
+DELIMITER //
+
+CREATE FUNCTION verificar_disponibilidad_libro (titulo VARCHAR(100))
+RETURNS BOOLEAN
+READS SQL DATA
+BEGIN
+    DECLARE disponibilidad BOOLEAN;
+    
+    SELECT COUNT(*) INTO disponibilidad 
+    FROM libro 
+    WHERE TITULO = titulo AND CANTIDAD_DISPONIBLE > 0;
+
+    RETURN disponibilidad;
+END//
+
+
+
+DELIMITER ;
+
+SELECT verificar_disponibilidad_libro('La Odisea');
+ 
+
+-- SEGUNDA FUNCIÓN
+-- La función obtener_promedio_calificacion_libro fue pensada  para dar a empleados y clientes una manera fácil de obtener el promedio de calificación de un libro en particular. Para lograr esto, la función accede a los datos de la base de datos, específicamente en la tabla "Reseña".
+-- Al llamar a esta función con el ID de un libro específico, la función realiza una consulta en la tabla "Reseña" para encontrar todas las calificaciones asociadas a ese libro. Luego, calcula el promedio de estas calificaciones y lo devuelve como un valor decimal.
+-- La variable local promedio se declara como un decimal y se inicializa en 0.0. Luego, se utiliza una consulta SQL para calcular el promedio de las calificaciones para el libro especificado mediante la función AVG(). El resultado de esta consulta se almacena en la variable promedio.
+-- Finalmente, la función devuelve el promedio calculado como resultado.
+
+DELIMITER //
+
+CREATE FUNCTION obtener_promedio_calificacion_libro(
+    libro_id INT
+)
+RETURNS DECIMAL(3, 2)
+READS SQL DATA -- porque consulta data local de la BD
+BEGIN
+    DECLARE promedio DECIMAL(3, 2) DEFAULT 0.0;
+    
+    -- Calculamos el promedio de las calificaciones
+    SELECT AVG(CALIFICACION) INTO promedio
+    FROM RESENIA
+    WHERE ID_LIBRO = libro_id;
+    
+    RETURN promedio;
+END //
+
+DELIMITER ;
+
+SELECT obtener_promedio_calificacion_libro(26) AS promedio_calificacion;
+
+
+-- LISTA DE STORED PROCEDURE 
+-- PRIMER STORED PROCEDURE
+
+-- El STORED PROCEDURE de  sp_registrar_resenia se crea con el propósito de registrar una reseña de un libro realizada por un cliente en la base de datos. Para lograr esto, toma varios parámetros de entrada, incluyendo la calificación, el texto del comentario, la fecha de la reseña, el ID del libro y el ID del cliente.
+-- Dentro del procedimiento, se declara una variable local llamada resultado, que se inicializa en FALSE. Luego, se realiza una inserción en la tabla RESENIA con los datos proporcionados. Si la inserción se lleva a cabo correctamente (indicado por la función ROW_COUNT() que devuelve el número de filas afectadas por la última instrucción SQL), se establece resultado en TRUE.
+-- Finalmente, se selecciona resultado como 'Resultado de la operación' y se devuelve como parte de la salida del procedimiento.
+
+DELIMITER //
+
+CREATE PROCEDURE sp_registrar_resenia(
+    IN calificacion INT,
+    IN comentario_texto VARCHAR(500),
+    IN fecha DATE,
+    IN id_libro INT,
+    IN id_cliente INT
+)
+BEGIN
+    DECLARE resultado BOOLEAN DEFAULT FALSE;
+
+    -- Insertar la reseña en la tabla RESENIA
+    INSERT INTO RESENIA (CALIFICACION, COMENTARIO, FECHA, ID_LIBRO, ID_CLIENTE)
+    VALUES (calificacion, comentario_texto, fecha, id_libro, id_cliente);
+
+    -- Si se realiza la inserción correctamente, establecer el resultado en TRUE
+    IF ROW_COUNT() > 0 THEN
+        SET resultado = TRUE;
+    END IF;
+
+    -- Devolver el resultado
+    SELECT resultado AS 'Resultado de la operación';
+END//
+
+DELIMITER ;
+
+CALL sp_registrar_resenia(5, 'Me encantó este libro, definitivamente lo recomendaría.', '2024-03-31', 29, 35);
+
+
+-- SEGUNDO STORED PROCEDURE
+
+-- El STORED PROCEDURE realizar_compra se encarga de llevar a cabo una transacción de compra de libros. Toma como parámetros de entrada el ID del cliente que realiza la compra, el ID del libro que se está comprando y la cantidad de libros que se desean comprar.
+-- Dentro del procedimiento, se calcula el precio total de la compra multiplicando el precio unitario del libro por la cantidad deseada. También se obtiene la fecha actual y el stock actual del libro.
+-- Luego, se verifica si hay suficiente stock disponible para realizar la compra. Si es así, se registra la transacción de compra en la tabla TRANSACCIONES, se actualiza el inventario de libros disponibles. En caso contrario, se devuelve un mensaje indicando que no hay suficiente stock disponible.
+-- En resumen, este procedimiento maneja todo el proceso de compra de libros, desde el registro de la transacción hasta la actualización del inventario.
+DELIMITER //
+
+CREATE PROCEDURE realizar_compra(
+    IN cliente_id INT,
+    IN libro_id INT,
+    IN cantidad INT
+)
+BEGIN
+    DECLARE total_precio DECIMAL(10, 2);
+    DECLARE fecha_actual DATE;
+    DECLARE stock_actual INT;
+    
+    -- Obtener el precio del libro, multiplicando precio x cantidad 
+    SELECT PRECIO * cantidad INTO total_precio
+    FROM LIBRO
+    WHERE ID_LIBRO = libro_id;
+    
+    -- Obtener la fecha actual
+    SET fecha_actual = CURDATE();
+    
+    -- Obtener el stock actual del libro
+    SELECT CANTIDAD_DISPONIBLE INTO stock_actual
+    FROM LIBRO
+    WHERE ID_LIBRO = libro_id;
+    
+    -- Verificar si hay suficiente stock
+    IF stock_actual >= cantidad THEN
+        -- Registrar la transacción de compra
+        INSERT INTO TRANSACCIONES (FECHA, CLIENTE_ID, TOTAL)
+        VALUES (fecha_actual, cliente_id, total_precio);
+        
+        -- Actualizar el inventario de libros disponibles, imoprtante para que se mantenga actualizada la base 
+        UPDATE LIBRO
+        SET CANTIDAD_DISPONIBLE = stock_actual - cantidad
+        WHERE ID_LIBRO = libro_id;
+        
+    
+        SELECT 'Compra realizada con éxito.' AS Mensaje;
+    ELSE
+        SELECT 'No hay suficiente stock disponible para realizar la compra.' AS Mensaje;
+    END IF;
+END//
+
+DELIMITER ;
+
+
+-- TERCER STORED PROCEDURE
+--  El procedimiento almacenado buscar_libros_por_categoria permite obtener una lista de libros según una categoría especificada. Funciona de la siguiente manera:
+
+-- Crea una tabla temporal llamada temp_libros para almacenar los resultados de la consulta.
+-- Inserta en la tabla temporal los libros que coinciden con la categoría especificada.
+-- Selecciona y devuelve los resultados de la tabla temporal.
+-- Elimina la tabla temporal creada para evitar acumulación de datos.
+
+
+DELIMITER //
+
+CREATE PROCEDURE buscar_libros_por_categoria(
+    IN categoria VARCHAR(100)
+)
+BEGIN
+    -- Crea una tabla temporal para almacenar los resultados
+    CREATE TEMPORARY TABLE temp_libros (
+        ID_LIBRO INT,
+        TITULO VARCHAR(100),
+        AUTOR VARCHAR(100),
+        CATEGORIA VARCHAR(100)
+    );
+
+    -- Inserta los resultados en la tabla temporal
+    INSERT INTO temp_libros (ID_LIBRO, TITULO, AUTOR, CATEGORIA)
+    SELECT ID_LIBRO, TITULO, AUTOR, CATEGORIA
+    FROM LIBRO
+    WHERE CATEGORIA = categoria;
+
+    -- Selecciona los resultados de la tabla temporal
+    SELECT * FROM temp_libros;
+    
+    -- Elimina la tabla temporal
+    DROP TEMPORARY TABLE IF EXISTS temp_libros;
+END//
+
+DELIMITER ;
+
+-- LISTA DE TRIGGERS
+
+-- PRIMER TRIGGER
+-- Quiero implementar un trigger que registre los cambios en el precio de un libro, por lo que necesito un tabla donde se registre esta informacion: 
+
+CREATE TABLE AuditoriaCambiosPrecio (
+    ID_AUDITORIA INT AUTO_INCREMENT PRIMARY KEY,
+    ID_LIBRO INT,
+    PRECIO_ANTERIOR DECIMAL(10, 2),
+    NUEVO_PRECIO DECIMAL(10, 2),
+    FECHA_CAMBIO TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- El trigger `registrar_cambio_precio` se activa después de que se actualiza un registro en la tabla `LIBRO`. Para cada fila actualizada, verifica si el precio anterior (`OLD.PRECIO`) es diferente al nuevo precio (`NEW.PRECIO`). Si hay un cambio de precio, registra los detalles del cambio, incluyendo el ID del libro, el precio anterior y el nuevo precio, en la tabla de auditoría `AuditoriaCambiosPrecio`. Esto permite mantener un historial de todos los cambios de precios realizados en los libros, lo que proporciona una trazabilidad completa de las modificaciones de precios en la base de datos.
+DELIMITER //
+
+CREATE TRIGGER registrar_cambio_precio
+AFTER UPDATE ON LIBRO
+FOR EACH ROW
+BEGIN
+    IF OLD.PRECIO != NEW.PRECIO THEN
+        INSERT INTO AuditoriaCambiosPrecio (ID_LIBRO, PRECIO_ANTERIOR, NUEVO_PRECIO)
+        VALUES (NEW.ID_LIBRO, OLD.PRECIO, NEW.PRECIO);
+    END IF;
+END//
+
+DELIMITER ;
+
 
