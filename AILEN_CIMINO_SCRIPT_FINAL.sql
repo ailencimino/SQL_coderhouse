@@ -528,7 +528,6 @@ JOIN VENTA v ON l.ID_LIBRO = v.ID_LIBRO
 GROUP BY a.ID_AUTOR, l.ID_LIBRO
 ORDER BY a.ID_AUTOR, total_vendido DESC;
 
-SELECT * from libros_mas_vendidos_por_autor
 
 -- 5 Vista: La vista "ventas_por_editorial" está pensada para proporcionar información sobre el total de ventas realizadas por cada editorial. Esta vista es útil para comprender el rendimiento de cada editorial en términos de ventas y puede ser utilizada por el equipo de gestión para tomar decisiones relacionadas con la colaboración con las editoriales más exitosas.
 -- Tablas involucradas: EDITORIAL, LIBRO, VENTA
@@ -760,4 +759,40 @@ DELIMITER ;
 SELECT * FROM libreria_guillermo.libro ;
 
 select * from libreria_guillermo.autor
+
+-- SEGUNDO TRIGGER
+-- el trigger ventas_rapidas_desde_ingreso se activará después de que se inserte una nueva fila en la tabla VENTA. 
+-- Dentro del trigger, se compara la fecha de ingreso del libro en el inventario con la fecha de venta. 
+-- Si la diferencia entre estas fechas es menor o igual a 21 días (3 semanas), se registra la venta rápida en una tabla de registro de ventas rápidas. Puedes ajustar este trigger según sea necesario para adaptarlo a tu modelo de negocio y estructura de base de datos.
+
+-- Trigger para detectar ventas rápidas de libros en un periodo de 3 semanas
+DELIMITER //
+CREATE TRIGGER ventas_rapidas_desde_ingreso
+AFTER INSERT ON VENTA
+FOR EACH ROW
+BEGIN
+    DECLARE fecha_ingreso DATE;
+    DECLARE fecha_venta DATE;
+    DECLARE id_libro INT;
+    DECLARE diferencia_dias INT;
+    
+    -- Obtener la fecha de ingreso del libro en el inventario
+    SELECT FECHA_INGRESO INTO fecha_ingreso
+    FROM LIBRO
+    WHERE ID_LIBRO = NEW.ID_LIBRO;
+    
+    -- Obtener la fecha de la venta
+    SET fecha_venta = NEW.FECHA_VENTA;
+    
+    -- Calcular la diferencia en días entre la fecha de ingreso y la fecha de venta
+    SET diferencia_dias = DATEDIFF(fecha_venta, fecha_ingreso);
+    
+    -- Si la diferencia es menor o igual a 21 días (3 semanas), mostrar un mensaje de alerta
+    IF diferencia_dias <= 21 THEN
+        INSERT INTO Registro_Ventas_Rapidas (ID_LIBRO, Fecha_Venta)
+        VALUES (NEW.ID_LIBRO, fecha_venta);
+    END IF;
+END //
+DELIMITER ;
+
 
